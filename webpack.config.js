@@ -1,10 +1,12 @@
 const path = require('path')
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 module.exports = {
-    entry: './index.js',
+    entry: {
+        main: './index.js',
+    },
     output: {
-        filename: 'main.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'build')
     },
     devtool: 'source-map',
@@ -12,7 +14,7 @@ module.exports = {
         loaders:[
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules)/,
                 loader: 'babel-loader',
             }
         ]
@@ -22,7 +24,10 @@ module.exports = {
 	],
     devServer:{
         publicPath: '/build/',
-        contentBase: [__dirname, path.join(__dirname, 'public')],
+        contentBase: [
+            __dirname,
+            path.join(__dirname, 'public'),
+        ],
         historyApiFallback: true,
         compress: true,
         port: 8080,

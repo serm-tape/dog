@@ -3282,6 +3282,10 @@ wordwrap@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
 
+workbox-sw@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-1.0.1.tgz#b291698b1d58f05abecc6cb919f945c9a9af0f1f"
+
 wrap-ansi@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-2.1.0.tgz#d8fc3d284dd05794fe84973caecdd1cf824fdd85"
