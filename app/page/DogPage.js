@@ -1,7 +1,31 @@
 import React from 'react'
+import DogEditor from '../component/DogEditor'
 
-const DogPage = () => (
-    <h1> This will list dogs for adopt </h1>
-)
+class DogPage extends React.Component{
+    constructor(){
+        super()
+        this.alreadyHasDogEditor = false
+    }
+
+    componentWillMount(){
+        this.alreadyHasDogEditor = $('#dog-editor').length>0?true:false
+    }
+
+    render(){
+        return (
+            <div className='ui container'>
+                The list
+                <div className='ui button teal' onClick={addDog.bind(this)}> + </div>
+                {this.alreadyHasDogEditor?null:<DogEditor />}
+            </div>
+        )
+    }
+}
+
+function addDog(e){
+    //This could make Sematic-ui create multiple <DogEditor />
+    //using this.alreadyHasDogEditor to check
+    $('#dog-editor').modal('show', {allowMultiple:false})
+}
 
 export default DogPage
