@@ -1,5 +1,6 @@
 import React from 'react'
 import DogEditor from '../component/DogEditor'
+import DogList from '../component/DogList'
 
 class DogPage extends React.Component{
     constructor(){
@@ -16,6 +17,7 @@ class DogPage extends React.Component{
             <div className='ui container'>
                 The list
                 <div className='ui button teal' onClick={addDog.bind(this)}> + </div>
+                <DogList />
                 {this.alreadyHasDogEditor?null:<DogEditor />}
             </div>
         )

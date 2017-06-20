@@ -1,5 +1,7 @@
 import React from 'react'
 import {LabeledInput} from './LabeledInput'
+import {connect} from 'react-redux'
+import {addDog} from '../redux/action/dog'
 
 class DogEditor extends React.Component{
     componentDidMount(){
@@ -34,7 +36,7 @@ class DogEditor extends React.Component{
                     <div id='map' style={{height:300}}></div>
                 </div>
                 <div className='actions'>
-                    <div className='ui positive button'>
+                    <div className='ui positive button' onClick={ () => this.props.dispatch(addDog({id:'eiei', name:$('#text').val()}))}>
                         Save
                     </div>
                     <div className='ui negative button'>
@@ -46,4 +48,4 @@ class DogEditor extends React.Component{
     }
 }
 
-export default DogEditor
+export default connect()(DogEditor)
